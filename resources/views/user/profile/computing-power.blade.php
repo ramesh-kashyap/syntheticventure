@@ -156,12 +156,9 @@
     font-weight: 550;
     color: #000;
     padding-top: 4px;
-<<<<<<< HEAD
-=======
 
 
     
->>>>>>> aa5ae9399f3c7a900a8389df5ded117c9e2f4ce9
 }
 input[type=text], textarea{
     margin-left: 31px;
@@ -180,10 +177,7 @@ input[type=text], textarea{
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-<<<<<<< HEAD
-=======
             font-family: PingFang SC;
->>>>>>> aa5ae9399f3c7a900a8389df5ded117c9e2f4ce9
         }
         .header img {
             width: 50px;
@@ -217,11 +211,7 @@ input[type=text], textarea{
             /* color: #aaaaaa; */
             color: #fff;
             /* padding-top: 6px; */
-<<<<<<< HEAD
-            font-size: 12px;
-=======
             font-size: 10px;
->>>>>>> aa5ae9399f3c7a900a8389df5ded117c9e2f4ce9
             font-family: PingFang SC;
             margin-top: -3px;
         }
@@ -361,11 +351,8 @@ margin: 0 2px;
             background-color: #2b2b2b;
             border-radius: 5px;
             margin: 15px auto;
-<<<<<<< HEAD
-=======
             padding-top: 16px;
     padding-bottom: 3px;
->>>>>>> aa5ae9399f3c7a900a8389df5ded117c9e2f4ce9
         }
         .header {
             font-size: 14px;
@@ -378,12 +365,8 @@ margin: 0 2px;
             color: #b3b3b3;
         }
         .item {
-<<<<<<< HEAD
-            margin-bottom: 10px;
-=======
             margin-bottom: 5px;
             font-family: PingFang SC;
->>>>>>> aa5ae9399f3c7a900a8389df5ded117c9e2f4ce9
         }
         .label {
             font-size: 12px;
@@ -391,11 +374,6 @@ margin: 0 2px;
         }
         .value {
             float: right;
-<<<<<<< HEAD
-        }
-
-        
-=======
             font-size: 10px;
         }
 
@@ -428,7 +406,6 @@ a {
     width: 5rem;
     margin-left: -2.5rem;
 }
->>>>>>> aa5ae9399f3c7a900a8389df5ded117c9e2f4ce9
             </style>
          
 
@@ -439,22 +416,14 @@ a {
                 <div data-v-397da544="" data-v-6df100a6="" class="head" data-v-cfc9a7fc="">
                     <div data-v-397da544="" class="container flex">
                         <!---->
-<<<<<<< HEAD
-                        <div data-v-397da544="" class="left_title">@lang('Computing Power Income') </div>
-=======
                         <div data-v-397da544="" class="left_title"><a href="{{route('user.recharge')}}" style="color:#fff;"><i data-v-397da544="" class="van-icon van-icon-arrow-left">
                         <!----></i></a></div>
->>>>>>> aa5ae9399f3c7a900a8389df5ded117c9e2f4ce9
                         <!---->
                         <div data-v-397da544="" class="flex1"></div>
                         <!---->
                         <!---->
                         <!---->
-<<<<<<< HEAD
-                        <div data-v-397da544="" class="head_right"></div>
-=======
                         <div data-v-397da544="" class="head_right">@lang('Computing Power Income') </div>
->>>>>>> aa5ae9399f3c7a900a8389df5ded117c9e2f4ce9
                     </div>
                 </div>
             </div>
