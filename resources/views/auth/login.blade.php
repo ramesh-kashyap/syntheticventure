@@ -198,16 +198,16 @@ body {
                                 src="{{asset('')}}assets/static/image/loginbg.png">
                             <div data-v-a34da882="" data-v-cfc9a7fc="" class="s" ></div>
                         </div>
-                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="container">
+                    {{-- <div data-v-a34da882="" data-v-cfc9a7fc="" class="container">
                        
                         <div data-v-a34da882="" data-v-cfc9a7fc="" class="logo" style="padding-top:80px">
                             <div data-v-a34da882="" data-v-cfc9a7fc="" class="s" style="
     text-align: left;
     font-size: 14px;
 ">@lang('Please enter your email and password to complete')</div>
-                                src="{{asset('')}}assets/static/img/bg-image.png">
+                              <img  src="{{asset('')}}assets/static/img/bg-image.png">
                             <div data-v-a34da882="" data-v-cfc9a7fc="" class="s" ></div>
-                        </div>
+                        </div> --}}
                     <div data-v-a34da882="" data-v-cfc9a7fc="" class="container">
                        
                         <div data-v-a34da882="" data-v-cfc9a7fc="" class="logo" style="padding-top:80px">
