@@ -380,6 +380,128 @@ return true;
 }
 
 
+function update_vip()
+{
+    try {
+        $allResult = User::orderBy('id', 'desc')->get();
+
+        if ($allResult->isEmpty()) {
+            Log::info('No users found for VIP update.');
+            return response()->json(['message' => 'No users found for VIP update.'], 404);
+        }
+
+        foreach ($allResult as $user) {
+          $my_level_team=my_level_team_count($user->id);
+          $gen_team1 =  (array_key_exists(1,$my_level_team) ? $my_level_team[1]:array());
+          $gen_team2 =  (array_key_exists(2,$my_level_team) ? $my_level_team[2]:array());
+          $gen_team3 =  (array_key_exists(3,$my_level_team) ? $my_level_team[3]:array());
+        
+          $gen_team1 = User::where(function($query) use($gen_team1)
+                  {
+                    if(!empty($gen_team1)){
+                      foreach ($gen_team1 as $key => $value) {
+                      //   $f = explode(",", $value);
+                      //   print_r($f)."<br>";
+                        $query->orWhere('id', $value);
+                      }
+                    }else{$query->where('id',null);}
+                  })->orderBy('id', 'DESC')->get();
+                  
+            $gen_team2 = User::where(function($query) use($gen_team2)
+                  {
+                    if(!empty($gen_team2)){
+                      foreach ($gen_team2 as $key => $value) {
+                      //   $f = explode(",", $value);
+                      //   print_r($f)."<br>";
+                        $query->orWhere('id', $value);
+                      }
+                    }else{$query->where('id',null);}
+                  })->orderBy('id', 'DESC')->get();
+             $gen_team3 = User::where(function($query) use($gen_team3)
+                  {
+                    if(!empty($gen_team3)){
+                      foreach ($gen_team3 as $key => $value) {
+                      //   $f = explode(",", $value);
+                      //   print_r($f)."<br>";
+                        $query->orWhere('id', $value);
+                      }
+                    }else{$query->where('id',null);}
+                  })->orderBy('id', 'DESC')->get();
+    
+    
+          
+    // Calculate totals
+  $gen_team1total = $gen_team1->count();
+        $team1_vip2 = $gen_team1->where('real_vip', 2)->count();
+        $team1_vip3 = $gen_team1->where('real_vip', 3)->count();
+        $team1_vip4 = $gen_team1->where('real_vip', 4)->count();
+        $team1_vip5 = $gen_team1->where('real_vip', 5)->count();
+        $team1_vip6 = $gen_team1->where('real_vip', 6)->count();
+        $team1_vip7 = $gen_team1->where('real_vip', 7)->count();
+
+  
+  $gen_team2total = $gen_team2->count();
+        $team2_vip2 = $gen_team2->where('real_vip', 2)->count();
+        $team2_vip3 = $gen_team2->where('real_vip', 3)->count();
+        $team2_vip4 = $gen_team2->where('real_vip', 4)->count();
+        $team2_vip5 = $gen_team2->where('real_vip', 5)->count();
+        $team2_vip6 = $gen_team2->where('real_vip', 6)->count();
+        $team2_vip7 = $gen_team2->where('real_vip', 7)->count();
+  
+  $gen_team3total = $gen_team3->count();
+        $team3_vip2 = $gen_team3->where('real_vip', 2)->count();
+        $team3_vip3 = $gen_team3->where('real_vip', 3)->count();
+        $team3_vip4 = $gen_team3->where('real_vip', 4)->count();
+        $team3_vip5 = $gen_team3->where('real_vip', 5)->count();
+        $team3_vip6 = $gen_team3->where('real_vip', 6)->count();
+        $team3_vip7 = $gen_team3->where('real_vip', 7)->count();
+  
+  // Combine totals for team 2 and team 3
+  $combine23_vip2 = $team2_vip2 + $team3_vip2;
+  $combine23_vip3 = $team2_vip3 + $team3_vip3;
+  $combine23_vip4 = $team2_vip4 + $team3_vip4;
+  $combine23_vip5 = $team2_vip5 + $team3_vip5;
+  $combine23_vip6 = $team2_vip6 + $team3_vip6;
+  $combine23_vip7 = $team2_vip7 + $team3_vip7;
+
+
+            $vip = $user->vip;
+
+            // Determine VIP level based on conditions
+            if (  ($team1_vip6 + $team1_vip7) >= 2 && ($combine23_vip5+$combine23_vip6+$combine23_vip7) >= 15) {
+            $vip = 7;
+        } elseif (($team1_vip5+$team1_vip6 + $team1_vip7) >= 3 && ($combine23_vip4+$combine23_vip5+$combine23_vip6+$combine23_vip7) >= 12) {
+          $vip = 6;
+        } elseif (($team1_vip4+$team1_vip5+$team1_vip6 + $team1_vip7) >= 3 && ($combine23_vip3+$combine23_vip4+$combine23_vip5+$combine23_vip6+$combine23_vip7) >= 5) {
+          $vip = 5;
+        } elseif (($team1_vip3+$team1_vip4+$team1_vip5+$team1_vip6 + $team1_vip7) >= 2 && ($combine23_vip2+$combine23_vip3+$combine23_vip4+$combine23_vip5+$combine23_vip6+$combine23_vip7) >= 5) {
+          $vip = 4;
+        } elseif (($team1_vip3+$team1_vip3+$team1_vip4+$team1_vip5+$team1_vip6 + $team1_vip7) >= 3) {
+          $vip = 3;
+        } 
+        else{
+          $vip = $user->vip;
+        }
+
+
+            // Check if VIP status has changed
+            if ($user->vip !== $vip) {
+                $user->vip = $vip;
+                $user->save();
+                Log::info("VIP status updated for user ID: {$user->id} to VIP level {$vip}");
+            } else {
+                Log::info("No change in VIP status for user ID: {$user->id}");
+            }
+        }
+
+        return response()->json(['message' => 'VIP levels updated successfully.'], 200);
+    } catch (\Exception $e) {
+        Log::error('Error updating VIP levels: ' . $e->getMessage());
+        return response()->json(['error' => 'An error occurred while updating VIP levels. Please try again later.'], 500);
+    }
+}
+
+
 
 function add_level_income($id,$amt)
 {

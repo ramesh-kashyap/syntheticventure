@@ -961,7 +961,7 @@
 
                                         </div>
                                     </div>
-                                    @if($vip>=0)
+                                    @if($vip>=3)
                                     <div data-v-167ffb9b="" class="lv"><img data-v-167ffb9b="" 
                                         src="{{ asset('') }}assets/static/img/unlock.png"> Unlock
                                     </div>

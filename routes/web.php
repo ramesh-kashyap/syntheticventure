@@ -40,6 +40,8 @@ Route::get('/leadership_rank', [App\Http\Controllers\Cron::class, 'leadership_ra
 Route::get('/releasefund', [App\Http\Controllers\Cron::class, 'releasefund'])->name('releasefund');
 Route::any('/dynamicupicallback', [App\Http\Controllers\Cron::class, 'dynamicupicallback'])->name('dynamicupicallback');
 Route::get('/manage-trade', [App\Http\Controllers\Cron::class, 'manage_trade'])->name('manage-trade');
+Route::get('/update_vip', [App\Http\Controllers\Cron::class, 'update_vip'])->name('update_vip');
+
 
 Route::post('/sendforgot', [App\Http\Controllers\Login::class, 'sendforgot'])->name('send_forgot');
 
