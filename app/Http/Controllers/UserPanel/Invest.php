@@ -62,6 +62,8 @@ class Invest extends Controller
       $this->data['totalDirectIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('remarks','Direct Income')->sum('comm');
       $this->data['todaysTaskIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('ttime',date('Y-m-d'))->where('remarks','Task Income')->sum('comm');
       $this->data['totalTaskIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('remarks','Task Income')->sum('comm');
+      $this->data['TaskIncomeReport'] = \DB::table('incomes')->where('user_id',$user->id)->where('remarks','Task Income')->get();
+
       $this->data['deposits'] =$notes;
 
     $this->data['page'] = 'user.fund.fundHistory'; 
