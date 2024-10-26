@@ -56,9 +56,15 @@ class Invest extends Controller
         $notes = $notes->paginate($limit)->appends(['limit' => $limit ]);
 
       $this->data['search'] =$search;
+      $this->data['todaysLevelIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('ttime',date('Y-m-d'))->where('remarks','Level Income')->sum('comm');
+      $this->data['totalLevelIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('remarks','Level Income')->sum('comm');
+      $this->data['todaysDirectIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('ttime',date('Y-m-d'))->where('remarks','Direct Income')->sum('comm');
+      $this->data['totalDirectIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('remarks','Direct Income')->sum('comm');
+      $this->data['todaysTaskIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('ttime',date('Y-m-d'))->where('remarks','Task Income')->sum('comm');
+      $this->data['totalTaskIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('remarks','Task Income')->sum('comm');
       $this->data['deposits'] =$notes;
 
-    $this->data['page'] = 'user.fund.fundHistory';
+    $this->data['page'] = 'user.fund.fundHistory'; 
     return $this->dashboard_layout();
 
     }

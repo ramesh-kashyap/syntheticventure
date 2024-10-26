@@ -451,33 +451,30 @@ margin: 0 2px;
 
     <div class="box2">
         <div class="item">
-            <span>Accumulated Earnings (EUR)</span>
-            <div>38.78892557</div>
+            <span>Today Task Income</span>
+            <div>$ {{ $todaysTaskIncome }}</div>
         </div>
         <div class="item">
-            <span>Cumulative computing power income(EUR)</span>
-            <div>25.44923629</div>
+            <span>Total Task Income</span>
+            <div>$ {{ $totalTaskIncome }}</div>
         </div>
         <div class="item">
-            <span>Cumulative team income(EUR)</span>
-            <div>13.33969828</div>
+            <span>Today Level Income</span>
+            <div>$ {{ $todaysLevelIncome }}</div>
         </div>
         <div class="item">
-            <span>Accumulated loss and profit(EUR)</span>
-            <div>0</div>
+            <span>Total Level Income</span>
+            <div>$ {{ $totalLevelIncome }}</div>
         </div>
         <div class="item">
-            <span>Today's Total Earnings(EUR)</span>
-            <div>8.4171</div>
+            <span>Today Direct Income</span>
+            <div>$ {{ $todaysDirectIncome }}</div>
         </div>
         <div class="item">
-            <span>Today's team income(EUR)</span>
-            <div>2.84525078</div>
+            <span>Total Direct Income</span>
+            <div>$ {{ $totalDirectIncome }}</div>
         </div>
-        <div class="item">
-            <span>Today's computing power income(EUR)</span>
-            <div>5.57189063</div>
-        </div>
+        
     </div>
                         <ul data-v-6df100a6="" data-v-cfc9a7fc="" class="tab flex">
                             <li data-v-6df100a6="" data-v-cfc9a7fc="">

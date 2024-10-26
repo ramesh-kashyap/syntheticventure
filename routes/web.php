@@ -163,7 +163,7 @@ Route::get('/rechargeFunds', [App\Http\Controllers\UserPanel\AddFund::class, 'fu
 Route::get('/register/{sponsorCode}', [App\Http\Controllers\Register::class, 'showRegistrationForm']);
 // Route::get('/generate-qr-code', [Register::class, 'generateQrCode']);
 
-Route::get('/recharge', [App\Http\Controllers\UserPanel\Invest::class, 'showrecord'])->name('user.recharge');
+Route::get('/income-record', [App\Http\Controllers\UserPanel\Invest::class, 'showrecord'])->name('user.recharge');
 Route::get('/invest', [App\Http\Controllers\UserPanel\Invest::class, 'index'])->name('user.invest');
 Route::get('/confirm-node/{id}', [App\Http\Controllers\UserPanel\Invest::class, 'edit'])->name('edit');
 // Route::get('/packege', [App\Http\Controllers\UserPanel\Invest::class, 'index'])->name('user.invest');
