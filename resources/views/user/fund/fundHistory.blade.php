@@ -451,11 +451,11 @@ margin: 0 2px;
 
     <div class="box2">
         <div class="item">
-            <span>Today Task Income</span>
+            <span>Today Node Power Income</span>
             <div>$ {{ $todaysTaskIncome }}</div>
         </div>
         <div class="item">
-            <span>Total Task Income</span>
+            <span>Total Node Power Income</span>
             <div>$ {{ $totalTaskIncome }}</div>
         </div>
         <div class="item">
@@ -498,7 +498,7 @@ margin: 0 2px;
                         <div data-v-ac2db8a0="" class="container">
                             <div data-v-ac2db8a0="" class="total-income">
                                 <div data-v-ac2db8a0="" class="title_box">
-                                    <div data-v-ac2db8a0="" class="title" style="font-size: 14px">@lang('Income Record List')</div>
+                                    <div data-v-ac2db8a0="" class="title" style="font-size: 12px;font-weight:100">@lang('Income Record List')</div>
                                     <!-- <div data-v-ac2db8a0="" class="choose_day">
                                         <i data-v-ac2db8a0=""
                                             class="arrow_down van-icon van-icon-arrow-down">
@@ -644,7 +644,7 @@ margin: 0 2px;
    
     <div class="row">
      <div class="label">
-      Computing Power Income
+      Node Power Income
      </div>
      <a href="{{route('user.computing-power')}}">
      <div class="label">
@@ -703,7 +703,7 @@ margin: 0 2px;
  
   <div class="row">
    <div class="label">
-    Computing Power Income
+    Daily Income
    </div>
    <a href="{{route('user.computing-power')}}">
    <div class="label">
